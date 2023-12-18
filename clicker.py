@@ -1,3 +1,4 @@
+#remember to use this command in python terminal: "& C:/Users/Bruker/AppData/Local/Microsoft/WindowsApps/python3.11.exe c:/Users/Bruker/Desktop/autoclikr/clicker.py"
 from random import random
 from threading import Thread
 from time import sleep
