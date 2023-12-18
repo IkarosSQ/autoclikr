@@ -2,7 +2,7 @@ from random import random
 from threading import Thread
 from time import sleep
 from pynput.mouse import Controller, Button
-from pynput.keyboard import KeyCode, Listener
+from pynput.keyboard import KeyCode, liste
 
 delay = 0.001
 mouse = Controller()
@@ -14,7 +14,7 @@ class AutoClicker(Thread):
         while True:
             if self.clicking:
                 mouse.click(Button.left, 1)
-            time.sleep(delay * random() + 1/2 * delay)
+            sleep(delay * random() + 1/2 * delay)
 
 def keypress(key):
     if key == KeyCode(char='-'):
