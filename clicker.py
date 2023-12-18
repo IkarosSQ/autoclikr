@@ -27,7 +27,7 @@ def keypress(key):
     if key == KeyCode(char='-'):
         AutoClicker.clicking = not AutoClicker.clicking
 
-start_button =tk.Button(root, text="Start ('-')", command=AutoClicker().start())
+start_button = tk.Button(root, text="Start ('-')", command=AutoClicker().start())
 start_button.pack()
 
 root.mainloop()
