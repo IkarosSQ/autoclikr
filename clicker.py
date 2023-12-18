@@ -1,29 +1,26 @@
-import time
-import threading
+from random import random
+from threading import Thread
+from time import sleep
 from pynput.mouse import Controller, Button
-from pynput.keyboard import Listener, KeyCode
+from pynput.keyboard import KeyCode, Listener
 
-TOGGLE_KEY = KeyCode(char="-")
+delay = 0.001
+mouse = Controller()
 
-clicking = False
-mouse = Controller
+class AutoClicker(Thread):
+    clicking = False
 
-def clicker():
-    while True:
-        if clicking:
-            mouse.click(Button.left, 1)
-        time.sleep(0.001)
+    def run(self):
+        while True:
+            if self.clicking:
+                mouse.click(Button.left, 1)
+            time.sleep(delay * random() + 1/2 * delay)
 
+def keypress(key):
+    if key == KeyCode(char='-'):
+        AutoClicker.clicking = not AutoClicker.clicking
 
-def toggle_event(key):
-    if key == TOGGLE_KEY:
-        global clicking
-        clicking = not clicking
+AutoClicker().start()
 
-
-click_thread = threading.Thread(target=clicker)
-click_thread.start()
-
-with Listener(on_press=toggle_event) as listener:
+with Listener(on_press=keypress) as listener:
     listener.join()
-    
