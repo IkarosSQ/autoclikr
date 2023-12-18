@@ -2,9 +2,9 @@ from random import random
 from threading import Thread
 from time import sleep
 from pynput.mouse import Controller, Button
-from pynput.keyboard import KeyCode, liste
+from pynput.keyboard import KeyCode, Listener
 
-delay = 0.001
+delay = 0.0001
 mouse = Controller()
 
 class AutoClicker(Thread):
