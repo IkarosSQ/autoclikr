@@ -5,7 +5,7 @@ from pynput.mouse import Controller, Button
 from pynput.keyboard import KeyCode, Listener
 
 
-delay = 0.0001
+delay = 0.00001
 mouse = Controller()
 
 class AutoClicker(Thread):
