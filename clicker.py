@@ -25,4 +25,3 @@ AutoClicker().start()
 
 with Listener(on_press=keypress) as listener:
     listener.join() 
-    
