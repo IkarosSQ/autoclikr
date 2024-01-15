@@ -3,7 +3,16 @@ from threading import Thread
 from time import sleep
 from pynput.mouse import Controller, Button
 from pynput.keyboard import KeyCode, Listener
+import tkinter as tk
 
+root = tk.Tk()
+root.title("AutoClickr")
+root.geometry("180x40")
+root.resizable(False, False)
+label = tk.Label(root, text="Press - to start/stop clicking")
+label.pack()
+
+root.mainloop()
 
 delay = 0.00001
 mouse = Controller()
