@@ -34,7 +34,7 @@ def toggle_clicking():
     AutoClicker.clicking = not AutoClicker.clicking
 
 
-click_button = tk.Button(root, text="Toggle Clicking", command=toggle_clicking)
+click_button = tk.Button(root, text="start Clicking", command=toggle_clicking)
 click_button.pack()
 
 AutoClicker().start()
